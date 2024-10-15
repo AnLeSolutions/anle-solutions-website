@@ -150,6 +150,11 @@ nav a {
     margin-bottom: 15px;
 }
 
+.product ul {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
 .product button {
     background-color: #d9534f;
     color: white;
@@ -179,8 +184,9 @@ nav a {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80vh;
+    min-height: 80vh;
     background-color: #f4f4f4;
+    padding: 20px; /* Added padding for better spacing on small screens */
 }
 
 .contact-box {
@@ -189,6 +195,7 @@ nav a {
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     width: 400px;
+    max-width: 100%; /* Ensures it does not exceed the screen width */
     text-align: center;
 }
 
@@ -219,6 +226,7 @@ nav a {
     border-radius: 5px;
     border: 1px solid #ccc;
     width: 100%;
+    box-sizing: border-box; /* Ensures proper padding handling on mobile */
 }
 
 .contact-box button {
@@ -256,8 +264,6 @@ footer {
 }
 
 /* Responsive Design */
-
-/* Tablets */
 @media (max-width: 768px) {
     .services .service-box,
     .product {
@@ -266,50 +272,46 @@ footer {
     }
 }
 
-/* Mobile Devices */
+/* Mobile Devices (max-width: 480px) */
 @media (max-width: 480px) {
-    header {
-        padding: 10px;
+    .contact-section {
+        padding: 10px; /* Reducing padding on smaller screens */
     }
 
-    nav a {
-        display: block;
-        margin: 10px 0;
+    .contact-box {
+        width: 100%; /* Ensures the box uses full width */
+        padding: 15px; /* Adjusted padding for mobile */
+        box-shadow: none; /* Optional: remove shadow on small screens for a cleaner look */
+    }
+
+    .contact-box h2 {
+        font-size: 20px; /* Smaller font size for headings on mobile */
+    }
+
+    .contact-box input,
+    .contact-box textarea {
+        font-size: 14px; /* Ensures input fields are readable on mobile */
+    }
+
+    .contact-box button {
+        font-size: 14px; /* Adjust button size for mobile */
+        padding: 8px; /* Smaller padding for the button */
+    }
+
+    .hero {
+        height: 300px; /* Reducing the height for mobile */
     }
 
     .hero h1 {
-        font-size: 2em;
+        font-size: 2em; /* Adjusting the font size */
     }
 
     .hero p {
         font-size: 1.2em;
     }
 
-    .hero button {
-        padding: 10px 20px;
-        font-size: 1em;
-    }
-
-    .product-list {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .product {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
     .services .service-box {
         width: 100%;
         margin-bottom: 20px;
-    }
-
-    .contact-box {
-        width: 90%;
-    }
-
-    footer {
-        padding: 10px;
     }
 }
